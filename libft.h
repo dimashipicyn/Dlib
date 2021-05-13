@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:59:17 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/06 15:13:31 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/13 14:29:19 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,6 +180,7 @@ void				delete(void *obj);
 ** vector iterator
 */
 void				*next(t_vector *vector);
+void				*previous(t_vector *vector);
 int					has_next(t_vector *vector);
 
 #endif
