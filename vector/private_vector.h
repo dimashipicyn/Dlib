@@ -11,5 +11,7 @@ BOOLEAN	insert(struct s_vector *this, void *elem, size_t position);
 void	*at(struct s_vector *this, size_t elem);
 void	clear(struct s_vector *vector);
 BOOLEAN	load(struct s_vector *this, void *mem, size_t n);
+BOOLEAN	add_mem(t_vector *this, void *mem, size_t size);
+void	*split(t_vector *vector, char *delim);
 
 #endif

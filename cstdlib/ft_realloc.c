@@ -4,7 +4,7 @@ void	*ft_realloc(void *mem, size_t size, size_t bytes)
 {
 	void	*new;
 	
-	new = ft_calloc(size * 2 + 1, bytes);
+	new = ft_calloc(size * 2 + 2, bytes);
 	if (new)
 		ft_memcpy(new, mem, size * bytes);
 	free(mem);

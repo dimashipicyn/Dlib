@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:59:17 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/13 14:29:19 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/17 19:04:24 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,8 @@ typedef struct	s_methods
 	void	*(*at)(struct s_vector *, size_t);
 	void	(*release)(struct s_vector *);
 	int		(*load)(struct s_vector *, void *, size_t);
+	int		(*add_mem)(struct s_vector *, void *, size_t);
+	void	*(*split)(struct s_vector *, char *);
 }				t_methods;
 
 typedef struct	s_vector

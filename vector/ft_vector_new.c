@@ -10,7 +10,9 @@ static t_methods g_methods =
 	clear,
 	at,
 	release,
-	load
+	load,
+	add_mem,
+	split
 };
 
 t_vector	*new_vector(size_t bytes)

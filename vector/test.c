@@ -98,6 +98,23 @@ void test_vector_at(void)
 	p = vector_char->method->at(vector_char, 11);
 	TEST_CHECK(p == 0);
 }
+
+void test_vector_split(void)
+{
+	char *p = 0;
+	t_vector *vector = new_vector(CHAR);
+	vector->method->load(vector, "hello world", 11);
+	t_vector *split = vector->method->split(vector, " ");
+	t_vector *hello = split->method->at(split, 0);
+	t_vector *world = split->method->at(split, 1);
+	t_vector *null_ptr = split->method->at(split, 2);
+	ft_putstr_fd(hello->mem, 1);
+	ft_putstr_fd(world->mem, 1);
+	TEST_CHECK(ft_memcmp(hello->mem, "hello", 5) == 0);
+//	TEST_CHECK(ft_memcmp(world, "world", 6) == 0);
+	TEST_CHECK(null_ptr == 0);
+}
+
 TEST_LIST =
 {
 	{"new_vector", test_vector_new},
@@ -108,5 +125,6 @@ TEST_LIST =
 	{"vector_erase", test_vector_erase},
 	{"vector_clear", test_vector_clear},
 	{"vector_at", test_vector_at},
+	{"vector_split", test_vector_split},
 	{0, 0}
 };
