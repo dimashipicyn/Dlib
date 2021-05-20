@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:59:17 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/17 19:04:24 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/20 14:13:00 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <errno.h>
+# include <string.h>
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
@@ -83,6 +85,9 @@ void				ft_bubblesort(void *array, int size,
 						int len, int (*cmp)(void *, void *));
 void				aFailed(char *file, int line, char *expr);
 void				test_check(int res, char *file, int line, char *expr);
+char				*ft_getprogname(void);
+void				ft_setprogname(char *name);
+size_t				ft_ptrlen(const void **ptr);
 
 /*
 ** lists function
@@ -132,6 +137,7 @@ void				ft_list_sort(t_list **begin_list, int (*cmp)());
 */
 int					get_next_line(int fd, char **line);
 int					ft_printf(const char *fmt, ...);
+void				ft_eprintf(const char *fmt, ...);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);

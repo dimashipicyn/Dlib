@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:03:31 by lbespin           #+#    #+#             */
-/*   Updated: 2021/02/24 19:09:24 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/20 12:34:25 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,20 +57,22 @@ static int	ft_processing(t_flag *params)
 	return (0);
 }
 
-int	ft_fprintf(int fd, const char *fmt, ...)
+void	ft_eprintf(const char *fmt, ...)
 {
 	t_flag		params;
 
+	if (ft_getprogname() != 0)
+		ft_printf("%s: ", ft_getprogname());
 	va_start(params.arg, fmt);
 	params.fmt = (char *)fmt;
 	params.res = 0;
 	params.err = 0;
-	params.fd = fd;
+	params.fd = 1;
 	ft_init_params(&params);
-	if (ft_processing(&params) == -1)
-		return (-1);
+	ft_processing(&params);
 	va_end(params.arg);
-	return (params.res);
+	ft_printf(": %s\n", strerror(errno));
+	exit(1);
 }
 
 int	ft_printf(const char *fmt, ...)

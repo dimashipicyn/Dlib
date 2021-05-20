@@ -101,18 +101,15 @@ void test_vector_at(void)
 
 void test_vector_split(void)
 {
-	char *p = 0;
+	char p[] = "hello world";
 	t_vector *vector = new_vector(CHAR);
-	vector->method->load(vector, "hello world", 11);
+	vector->method->load(vector, p, sizeof(p));
 	t_vector *split = vector->method->split(vector, " ");
-	t_vector *hello = split->method->at(split, 0);
-	t_vector *world = split->method->at(split, 1);
-	t_vector *null_ptr = split->method->at(split, 2);
-	ft_putstr_fd(hello->mem, 1);
-	ft_putstr_fd(world->mem, 1);
+	t_vector *hello = *(t_vector **)split->method->at(split, 0);
+	t_vector *world = *(t_vector **)split->method->at(split, 1);
 	TEST_CHECK(ft_memcmp(hello->mem, "hello", 5) == 0);
-//	TEST_CHECK(ft_memcmp(world, "world", 6) == 0);
-	TEST_CHECK(null_ptr == 0);
+	TEST_CHECK(ft_memcmp(world->mem, "world", 5) == 0);
+	TEST_CHECK(split->size == 2);
 }
 
 TEST_LIST =
