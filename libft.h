@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:59:17 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/20 14:13:00 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/21 12:57:35 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdarg.h>
 # include <errno.h>
 # include <string.h>
+# include <fcntl.h>
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
@@ -138,6 +139,7 @@ void				ft_list_sort(t_list **begin_list, int (*cmp)());
 int					get_next_line(int fd, char **line);
 int					ft_printf(const char *fmt, ...);
 void				ft_eprintf(const char *fmt, ...);
+void				ft_wprintf(const char *fmt, ...);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);

@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:03:31 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/20 12:34:25 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/21 12:54:24 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,23 @@ void	ft_eprintf(const char *fmt, ...)
 	va_end(params.arg);
 	ft_printf(": %s\n", strerror(errno));
 	exit(1);
+}
+
+void	ft_wprintf(const char *fmt, ...)
+{
+	t_flag		params;
+
+	if (ft_getprogname() != 0)
+		ft_printf("%s: ", ft_getprogname());
+	va_start(params.arg, fmt);
+	params.fmt = (char *)fmt;
+	params.res = 0;
+	params.err = 0;
+	params.fd = 1;
+	ft_init_params(&params);
+	ft_processing(&params);
+	va_end(params.arg);
+	ft_printf(": %s\n", strerror(errno));
 }
 
 int	ft_printf(const char *fmt, ...)
