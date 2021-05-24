@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:59:17 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/21 12:57:35 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/24 16:09:09 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,6 +191,7 @@ void				delete(void *obj);
 */
 void				*next(t_vector *vector);
 void				*previous(t_vector *vector);
+void				*get_next(t_vector *vector);
 int					has_next(t_vector *vector);
 
 #endif

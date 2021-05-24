@@ -38,7 +38,7 @@ SRCS += ft_vector_new.c ft_vector_delete.c ft_vector_at.c\
 		ft_vector_push_back.c ft_vector_push_front.c\
 		ft_vector_has_next.c ft_vector_next.c ft_vector_load.c\
 		ft_vector_release.c ft_vector_insert.c ft_vector_previous.c\
-		ft_vector_add_mem.c ft_vector_split.c
+		ft_vector_add_mem.c ft_vector_split.c ft_vector_get_next.c
 
 VPATH := cstdlib:cstring:cprintf:list:vector:cstdio
 OBJ = $(SRCS:.c=.o)
