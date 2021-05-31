@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:59:17 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/24 16:09:09 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/05/31 17:50:11 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void				test_check(int res, char *file, int line, char *expr);
 char				*ft_getprogname(void);
 void				ft_setprogname(char *name);
 size_t				ft_ptrlen(const void **ptr);
+void				ft_free_array_ptr(void	**array);
 
 /*
 ** lists function
@@ -193,5 +194,10 @@ void				*next(t_vector *vector);
 void				*previous(t_vector *vector);
 void				*get_next(t_vector *vector);
 int					has_next(t_vector *vector);
+
+/*
+** additional vector function
+*/
+void				skip_delimiters(t_vector *vector, char *delim);
 
 #endif
