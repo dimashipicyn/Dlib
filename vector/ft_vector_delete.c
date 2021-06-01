@@ -2,7 +2,8 @@
 
 void	delete(void *obj)
 {
-	t_methods *m;
+	t_methods	*m;
+
 	if (!obj)
 		return ;
 	m = *(t_methods **)obj;

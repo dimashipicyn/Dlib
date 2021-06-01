@@ -20,7 +20,8 @@ SRCS += ft_strrev.c get_next_line.c ft_itoa_base.c ft_str_repeat.c\
 		ft_isnewline.c ft_progname.c ft_ptrlen.c ft_free_ptr_array.c
 
 #printf
-SRCS += ft_printf.c ft_parser.c ft_pointer.c ft_str_ch.c ft_number.c
+SRCS += ft_printf.c ft_parser.c ft_pointer.c ft_str_ch.c ft_number.c\
+		ft_printf_utils.c
 
 #lists function
 SRCS += ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\

@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:59:17 by lbespin           #+#    #+#             */
-/*   Updated: 2021/05/31 17:50:11 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/06/01 19:43:46 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strrev(char *str);
 size_t				ft_strnlen(const char *s, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
-int					ft_str_repeat(int repeat, char *str);
+int					ft_str_repeat(int stream, int repeat, char *str);
 char				**ft_split_reg(char *s, char *reg);
 int					ft_isalnum(int character);
 int					ft_isalpha(int character);
@@ -141,6 +141,7 @@ int					get_next_line(int fd, char **line);
 int					ft_printf(const char *fmt, ...);
 void				ft_eprintf(const char *fmt, ...);
 void				ft_wprintf(const char *fmt, ...);
+int					ft_fprintf(int stream, const char *fmt, ...);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
@@ -156,9 +157,9 @@ void				ft_putnbr_fd(int n, int fd);
 # define DOUBLE 8
 # define PTR 8
 
-struct s_vector;
+struct	s_vector;
 
-typedef struct	s_methods
+typedef struct s_methods
 {
 	int		(*insert)(struct s_vector *, void *, size_t);
 	int		(*size)(struct s_vector *);
@@ -173,14 +174,14 @@ typedef struct	s_methods
 	void	*(*split)(struct s_vector *, char *);
 }				t_methods;
 
-typedef struct	s_vector
+typedef struct s_vector
 {
 	t_methods	*method;
-	void	*mem;
-	size_t	size;
-	size_t	max_size;
-	size_t	bytes;
-	size_t	pos;
+	void		*mem;
+	size_t		size;
+	size_t		max_size;
+	size_t		bytes;
+	size_t		pos;
 }				t_vector;
 
 // Constructor and destructor

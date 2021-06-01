@@ -1,6 +1,6 @@
 #include "libft.h"
 
-size_t		ft_ptrlen(const void **ptr)
+size_t	ft_ptrlen(const void **ptr)
 {
 	const void	**ptr_copy;
 

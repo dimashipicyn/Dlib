@@ -1,6 +1,6 @@
 #include "private_vector.h"
 
-static t_methods g_methods =
+static t_methods	g_methods =
 {
 	insert,
 	size,

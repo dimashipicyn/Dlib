@@ -2,7 +2,7 @@
 
 BOOLEAN	load(t_vector *this, void *mem, size_t n)
 {
-	void *m;
+	void	*m;
 
 	m = ft_calloc(n + 1, this->bytes);
 	if (!m)

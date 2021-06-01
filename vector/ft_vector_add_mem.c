@@ -1,6 +1,6 @@
 #include "libft.h"
 
-BOOLEAN add_mem(t_vector *this, void *mem, size_t size)
+BOOLEAN	add_mem(t_vector *this, void *mem, size_t size)
 {
 	void	*nmem;
 

@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:54:18 by lbespin           #+#    #+#             */
-/*   Updated: 2021/02/24 19:11:39 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/06/01 19:22:33 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	ft_number(t_flag *params, char *buf, int sign)
 	char	str[2];
 
 	str[0] = params->ch;
+	str[1] = 0;
 	if (buf[0] == '0' && params->precision == 0)
 		buf[0] = '\0';
 	len = ft_strlen(buf);
@@ -27,19 +28,18 @@ static void	ft_number(t_flag *params, char *buf, int sign)
 	if (!(params->flags & LEFT))
 	{
 		if (sign && params->ch == '0')
-		{
-			params->err = write(1, "-", 1);
-			sign = 0;
-		}
-		params->res += ft_str_repeat(params->width - params->precision, str);
+			params->err = write(params->fd, "-", 1);
+		params->res += ft_str_repeat(params->fd,
+				params->width - params->precision, str);
 		params->width = -1;
 	}
-	if (sign)
-		params->err = write(1, "-", 1);
-	params->res += ft_str_repeat(params->precision - len, "0");
-	params->err = write(1, buf, len);
+	if (sign && params->ch != '0')
+		params->err = write(params->fd, "-", 1);
+	params->res += ft_str_repeat(params->fd, params->precision - len, "0");
+	params->err = write(params->fd, buf, len);
 	params->res += len;
-	params->res += ft_str_repeat(params->width - params->precision, " ");
+	params->res += ft_str_repeat(params->fd,
+			params->width - params->precision, " ");
 }
 
 void	ft_print_d(t_flag *params)

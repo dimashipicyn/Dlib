@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int		ft_isnewline(int character)
+int	ft_isnewline(int character)
 {
 	if (character == '\n')
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 12:46:17 by lbespin           #+#    #+#             */
-/*   Updated: 2020/12/12 12:40:07 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/06/01 18:32:21 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ void	ft_print_s(t_flag *params);
 void	ft_print_d(t_flag *params);
 void	ft_print_u(t_flag *params);
 int		ft_print_x(t_flag *params);
+int		ft_processing(t_flag *params);
+void	ft_init_params(t_flag *params);
+void	ft_print(t_flag *params);
 
 #endif

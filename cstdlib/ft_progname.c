@@ -1,13 +1,15 @@
 #include "libft.h"
 
-static char *progname = 0;
+static char	*g_progname = 0;
 
 void	ft_setprogname(char *name)
 {
-	progname = ft_strdup(name);
+	if (g_progname)
+		return ;
+	g_progname = ft_strdup(name);
 }
 
-char *ft_getprogname(void)
+char	*ft_getprogname(void)
 {
 	return (progname);
 }

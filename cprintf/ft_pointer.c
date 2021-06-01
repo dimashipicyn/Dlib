@@ -6,7 +6,7 @@
 /*   By: lbespin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:21:57 by lbespin           #+#    #+#             */
-/*   Updated: 2021/02/24 19:10:33 by lbespin          ###   ########.fr       */
+/*   Updated: 2021/06/01 18:45:50 by lbespin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ static void	ft_print_zero(t_flag *params, char *buf, int len)
 	precision = params->precision;
 	while (precision-- > len)
 	{
-		params->err = write(1, "0", 1);
+		params->err = write(params->fd, "0", 1);
 		params->res += 1;
 	}
 	while (*buf)
 	{
-		params->err = write(1, buf++, 1);
+		params->err = write(params->fd, buf++, 1);
 		params->res += 1;
 	}
 	while ((params->width)-- > params->precision + 2)
 	{
-		params->err = write(1, " ", 1);
+		params->err = write(params->fd, " ", 1);
 		params->res += 1;
 	}
 }
@@ -48,11 +48,11 @@ static void	ft_pointer(t_flag *params, char *buf)
 	{
 		while ((params->width)-- > params->precision + 2)
 		{
-			params->err = write(1, " ", 1);
+			params->err = write(params->fd, " ", 1);
 			params->res += 1;
 		}
 	}
-	params->err = write(1, "0x", 2);
+	params->err = write(params->fd, "0x", 2);
 	params->res += 2;
 	ft_print_zero(params, buf, len);
 }

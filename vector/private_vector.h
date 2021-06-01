@@ -3,7 +3,7 @@
 # include "libft.h"
 
 BOOLEAN	erase(struct s_vector *this, size_t position);
-int	size(struct s_vector *vector);
+int		size(struct s_vector *vector);
 void	release(struct s_vector *vector);
 BOOLEAN	push_front(struct s_vector *vector, void *elem);
 BOOLEAN	push_back(struct s_vector *vector, void *elem);
