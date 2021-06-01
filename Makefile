@@ -16,7 +16,7 @@ ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 #additional function
 SRCS += ft_strrev.c get_next_line.c ft_itoa_base.c ft_str_repeat.c\
 		ft_strnlen.c ft_toupper_str.c ft_strcmp.c ft_isdigit_str.c\
-		ft_split_reg.c ft_swap.c ft_bubblesort.c ft_realloc.c ft_assert.c\
+		ft_split_reg.c ft_swap.c ft_bubblesort.c ft_realloc.c\
 		ft_isnewline.c ft_progname.c ft_ptrlen.c ft_free_ptr_array.c
 
 #printf

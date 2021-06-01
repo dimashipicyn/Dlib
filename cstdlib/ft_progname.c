@@ -11,5 +11,5 @@ void	ft_setprogname(char *name)
 
 char	*ft_getprogname(void)
 {
-	return (progname);
+	return (g_progname);
 }
