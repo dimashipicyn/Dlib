@@ -201,4 +201,12 @@ int					has_next(t_vector *vector);
 */
 void				skip_delimiters(t_vector *vector, char *delim);
 
+#define insert(obj, elem, pos) obj->method->insert(obj, elem, pos)
+#define size(obj) obj->method->size(obj)
+#define push_back(obj, elem) obj->method->push_back(obj, elem)
+#define push_front(obj, elem) obj->method->push_front(obj, elem)
+#define erase(obj, pos) obj->method->erase(obj, pos)
+#define clear(obj) obj->method->clear(obj)
+#define at(obj, pos) obj->method->at(obj, pos)
+
 #endif
