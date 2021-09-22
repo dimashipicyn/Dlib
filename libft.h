@@ -77,6 +77,7 @@ void				*ft_memchr(const void *memptr, int val, size_t n);
 int					ft_memcmp(const void *memptr1,
 						const void *memptr2, size_t n);
 int					ft_atoi(char *str);
+long				ft_atol(char *str);
 char				*ft_itoa_base(unsigned long long nb, int base);
 char				*ft_itoa(int n);
 void				*ft_calloc(size_t nmem, size_t size);
